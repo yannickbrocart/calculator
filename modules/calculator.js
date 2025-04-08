@@ -224,11 +224,38 @@ class Calculator {
     }
 
     _displayCalculus() {
-        this.calculusComponent.innerHTML = this.calculus;
+        // frame lenght
+        let calculusFrame;
+        this.calculusComponent.innerHTML = '';
+        if (this.calculus.length > 16)
+            calculusFrame = this.calculus.slice(this.calculus.length - 16);
+        else calculusFrame = this.calculus;
+        // result style
+        for (let index = 0; index < calculusFrame.length; index++) {
+            if (!NUMBERS.includes(calculusFrame.charAt(index))) {
+                this.calculusComponent.innerHTML +=
+                    '<span class="strong">' + calculusFrame.charAt(index) + '</span>';
+            } else this.calculusComponent.innerHTML += calculusFrame.charAt(index);
+        }
     }
 
     _displayResult() {
         this.resultComponent.innerHTML = '';
-        this.resultComponent.innerHTML = this.result;
+        if (this.result.toString().length > 7) this.resultComponent.innerHTML = this._convertResultInscientificNotation(this.result);
+        else this.resultComponent.innerHTML = this.result;
+    }
+
+    _convertResultInscientificNotation(result) {
+        let decimal = 4;
+        let scientificResult = result.toExponential(decimal);
+        let posExponent = scientificResult.indexOf('e');
+        let baseResult = scientificResult.slice(0, posExponent);
+        let exponentResult = scientificResult.slice(posExponent);
+        return '<span class="scientifique-notation">' 
+               + baseResult
+               + '<span class="exponent">' 
+               + exponentResult
+               + '</span>'
+               + '</span>';
     }
 }

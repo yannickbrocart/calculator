@@ -5,6 +5,7 @@
     --color-display-alert:       #506044;
     --color-display-calculus:    #d1dae5;
     --color-display-result:      #d1dae5;
+    --color-display-exponent:    #ccdfa2;
     --color-keyboard-bg:         #1c1d23;
     --color-key-operator:        #28b36e;
     --color-key-manipulator:     #7b94f7;
@@ -156,4 +157,12 @@ html {
 .calculator .keyboard .key.key-operator.key-disabled i,
 .calculator .keyboard .key.key-manipulator.key-disabled {
     color: var(--color-key-disabled);
+}
+
+.calculator .display .result .scientifique-notation {
+    font-size: 42px;
+}
+
+.calculator .display .result .scientifique-notation .exponent {
+    color: var(--color-display-exponent);
 }
