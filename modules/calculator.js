@@ -27,7 +27,7 @@ const KEYBOARD_KEYS_CONFIG =
         { id: '2' },
         { id: '3' },
         { id: 'add', key_icon: 'plus', display: '+' },
-        { id: '000', key_disabled: true },
+        { id: '000' },
         { id: '0' },
         { id: 'decimal', display: '&#8226;' },
         { id: 'equals', key_icon: 'equals', display: '=' }
@@ -152,6 +152,11 @@ class Calculator {
     }
 
     _handleNumber(keyContent) {
+        if (keyContent === '000' &&
+           (this.calculus.length == 0 || this.previousKeyType == 'operator')) {
+            this.alert = ALERT_MESSAGES.zerosAtStart;
+            return;
+        }
         if (this.numberCache === '0') {
             this.numberCache = keyContent;
             this.calculus = this.calculus.slice(0, -1);
@@ -185,6 +190,30 @@ class Calculator {
         else if (keyContent === 'equals') this._handleEquals();
     }
 
+    _handleDecimal() {
+        if (this.numberCache.includes('.')) {
+            this.alert = ALERT_MESSAGES.oneDecimal;
+            return;
+        }
+        if (this.calculus.length == 0 ||
+            this.previousKeyType === 'operator') {
+            this.numberCache = this.calculus += '0.';
+            return;
+        }
+        this.numberCache += '.';
+        this.calculus += '.';
+        this.previousKeyType = 'number';
+    }
+
+    _handleEquals() {
+        if (this.previousKeyType != 'equals') {
+            parseTree.addItem(this.numberCache, 'number');
+            this.numberCache = '';
+            this.previousKeyType = 'equals';
+            this.result = parseTree.calculate()
+        }
+    }
+
     _clearAlert() {
         this.alert = '';
     }
@@ -199,24 +228,6 @@ class Calculator {
 
     _clearNumberCache() {
         this.numberCache = '';
-    }
-
-    _handleDecimal() {
-        if (this.numberCache.includes('.')) {
-            this.alert = ALERT_MESSAGES.oneDecimal;
-            return;
-        }
-        if (this.calculus.length == 0 ||
-            this.previousKeyType === 'operator')
-            this.numberCache = this.calculus += '0.';
-        else this.numberCache = this.calculus += '.';
-    }
-
-    _handleEquals() {
-        parseTree.addItem(this.numberCache, 'number');
-        this.numberCache = '';
-        this.previousKeyType = 'equals';
-        this.result = parseTree.calculate();
     }
 
     _displayAlert() {

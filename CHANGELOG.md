@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+>## [1.2] - 2025-04-09
+>### Added
+>- Number triple zero.
+>### Fixed
+>- Issue #1.
+
 >## [1.1] - 2025-04-08
 >### Added
 >- Display results in scientific notation if necessary.

@@ -23,7 +23,7 @@ You only need to upload the [folder](https://github.com/yannickbrocart/calculato
 - [X] Enhance the display of results to scientific notation if necessary
 - [X] Enhance the display of calculations with scrolling effect
 - [ ] Enhance the display of result and calculations with multilines mode
-- [ ] Add `triple zero`
+- [X] Add `triple zero`
 - [ ] Add `multiply` and `divide` operators
 - [ ] Add `backspace` manipulator
 - [ ] Add `inverse` (+/-) manipulator
