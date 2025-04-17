@@ -13,16 +13,18 @@
 ## Overview
 This is a basic calculator web service build in full javascript.
 It take multiples numbers and operators to return mathematical result.
+To try it, go to the following address [https://calculator.yannickbrocart.com](https://calculator.yannickbrocart.com)
 
 <!-- GETTING STARTED -->
 ## Getting started
-You only need to upload the [folder](https://github.com/yannickbrocart/calculator) of the project on your desktop and lauch index.htm.
+You only need to upload the [folder](https://github.com/yannickbrocart/calculator) of the project on your desktop and lauch index.htm
+
 
 <!-- ROADMAP -->
 ## Roadmap
 - [X] Enhance the display of results to scientific notation if necessary
 - [X] Enhance the display of calculations with scrolling effect
-- [ ] Enhance the display of result and calculations with multilines mode
+- [X] Enhance the display of result and calculations with multilines mode
 - [X] Add `triple zero`
 - [ ] Add `multiply` and `divide` operators
 - [ ] Add `backspace` manipulator
