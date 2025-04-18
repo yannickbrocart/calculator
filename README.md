@@ -18,7 +18,7 @@ To try it, go to the following address [https://calculator.yannickbrocart.com](h
 
 <!-- LIVE DEMO -->
 ## Live demo
-![Calculator live demo](https://yannickbrocart.github.io/calculator/)
+[Calculator live demo](https://yannickbrocart.github.io/calculator/)
 
 <!-- GETTING STARTED -->
 ## Getting started
