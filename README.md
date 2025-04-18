@@ -2,6 +2,7 @@
 
 ## Table of Contents
 - [Overview](#overview)
+- [Live demo](#livedemo)
 - [Getting started](#getting-started)
 - [Roadmap](#roadmap)
 - [Contributing](#contributing)
@@ -14,6 +15,10 @@
 This is a basic calculator web service build in full javascript.
 It take multiples numbers and operators to return mathematical result.
 To try it, go to the following address [https://calculator.yannickbrocart.com](https://calculator.yannickbrocart.com)
+
+<!-- LIVE DEMO -->
+## Live demo
+![Calculator live demo](https://yannickbrocart.github.io/calculator/)
 
 <!-- GETTING STARTED -->
 ## Getting started
